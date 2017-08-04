@@ -79,8 +79,17 @@ if (has("termguicolors"))
     set termguicolors
 endif
 
-let g:python_host_prog='/usr/local/bin/python2'
-let g:python3_host_prog='/usr/local/miniconda3/bin/python3'
+
+if has('unix')
+    if has('mac')
+        let g:python_host_prog='/usr/local/bin/python2'
+        let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
+    else
+        let g:python_host_prog='/usr/local/bin/python2'
+        let g:python3_host_prog='/usr/local/miniconda3/bin/python3'
+    endif
+endif
+
 
 set background=dark
 let g:monokai_term_italic = 1
