@@ -90,7 +90,6 @@ alias vim='nvim'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
-alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
@@ -108,8 +107,15 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-export PATH="/usr/local/miniconda3/bin:$PATH"
-export EDITOR="/usr/local/bin/nvim"
+if [[ $(uname) == "Darwin" ]]; then
+    alias config='/usr/local/bin/git --git-dir=/Users/matbas/.cfg/ --work-tree=/Users/matbas'
+    export PATH="/Users/matbas/miniconda3/bin:$PATH"
+    export EDITOR="/usr/local/bin/nvim"
+else
+    alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
+    export PATH="/usr/local/miniconda3/bin:$PATH"
+    export EDITOR="/usr/local/bin/nvim"
+fi
 
 #if [[ $TERM == xterm ]]; then
 #   TERM=xterm-256color;
