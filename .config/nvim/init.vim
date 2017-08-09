@@ -18,6 +18,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentline'
+Plug 'ludovicchabant/vim-gutentags'
 
 call plug#end()
 
@@ -67,6 +68,8 @@ nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 nnoremap <Leader>n :bn<CR>
+nnoremap <Leader>p :bp<CR>
+nnoremap <Leader>d :bd<CR>
 inoremap jj <esc>
 
 set encoding=utf-8
@@ -126,3 +129,8 @@ let g:ale_sign_column_always=1
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
 
+let delimitMate_expand_cr=1
+
+let g:gutentags_enabled=1
+let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.xhtml', '*.xml']
+let g:gutentags_cache_dir = '~/.config/nvim/gutentags'
