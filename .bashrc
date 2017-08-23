@@ -111,17 +111,27 @@ if [[ $(uname) == "Darwin" ]]; then
     alias config='/usr/local/bin/git --git-dir=/Users/matbas/.cfg/ --work-tree=/Users/matbas'
     export PATH="/Users/matbas/miniconda3/bin:$PATH"
     export EDITOR="/usr/local/bin/nvim"
+    export CLICOLOR=1
+    export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
+    alias brewall='brew update && brew upgrade ; brew cleanup'
 else
     alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
     export PATH="/usr/local/miniconda3/bin:$PATH"
     export EDITOR="/usr/local/bin/nvim"
+    export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
+
+[ -f /usr/local/etc/bash_completion ] && . /usr/local/etc/bash_completion
+
+# if [ -f "/usr/local/opt/bash-git-prompt/share/gitprompt.sh" ]; then
+#     __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
+#     source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
+# fi
 
 #if [[ $TERM == xterm ]]; then
 #   TERM=xterm-256color;
 #fi
 
-export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 
 #setxkbmap -layout gb
 
