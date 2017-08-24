@@ -94,6 +94,7 @@ if has('unix')
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
     else
+        tnoremap <Esc> <C-\><C-n>
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/usr/local/miniconda3/bin/python3'
     endif
