@@ -8,7 +8,7 @@ Plug 'itchyny/lightline.vim'
 Plug 'mgee/lightline-bufferline'
 Plug 'pangloss/vim-javascript'
 Plug 'python-mode/python-mode'
-Plug 'raimondi/delimitmate'
+Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -129,8 +129,6 @@ let g:ale_sign_column_always=1
 
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
-
-let delimitMate_expand_cr=1
 
 let g:gutentags_enabled=1
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.xhtml', '*.xml']
