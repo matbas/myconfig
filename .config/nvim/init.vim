@@ -72,6 +72,7 @@ nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>d :bd<CR>
 inoremap jj <esc>
+tnoremap <Esc> <C-\><C-n>
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -94,7 +95,6 @@ if has('unix')
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
     else
-        tnoremap <Esc> <C-\><C-n>
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/usr/local/miniconda3/bin/python3'
     endif
