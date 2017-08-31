@@ -113,11 +113,13 @@ if [[ $(uname) == "Darwin" ]]; then
     export EDITOR="/usr/local/bin/nvim"
     export CLICOLOR=1
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
-    alias brewall='brew update && brew upgrade ; brew cleanup'
-else
-    alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
-    export PATH="/usr/local/miniconda3/bin:$PATH"
-    export EDITOR="/usr/local/bin/nvim"
+    alias bb='brew update && brew upgrade ; brew cleanup'
+elif [[ $(uname -o) == "Android" ]]; then
+    export EDITOR="/data/data/com.termux/files/usr/bin/nvim"
+    alias config='/data/data/com.termux/files/usr/bin/git --git-dir=/data/data/com.termux/files/home/.cfg --work-tree=/data/data/com.termux/files/home'
+    # alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
+#     export PATH="/usr/local/miniconda3/bin:$PATH"
+#     export EDITOR="/usr/local/bin/nvim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
 
