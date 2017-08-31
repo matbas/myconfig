@@ -84,19 +84,21 @@ set autoread
 
 set magic
 
-set termguicolors
 if (has("termguicolors"))
     set termguicolors
 endif
 
-
 if has('unix')
+    let g:os = substitute(system('uname'), '\n', '', '')
     if has('mac')
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
-    else
-        let g:python_host_prog='/usr/local/bin/python2'
-        let g:python3_host_prog='/usr/local/miniconda3/bin/python3'
+    elseif g:os == 'Linux' 
+        if substitute(system('uname -o'), '\n', '', '') == 'Android'
+            let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python'
+            let g:gitgutter_sh='sh'
+            let g:gitgutter_sign_removed='–'
+        endif
     endif
 endif
 
@@ -109,7 +111,6 @@ set hidden
 set showtabline=2
 
 let g:lightline = { 'colorscheme': 'powerline', }
-
 let g:lightline.tabline = {'left': [['buffers']], 'right':[['close']]}
 let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
 let g:lightline.component_type = {'buffers': 'tabsel'}
