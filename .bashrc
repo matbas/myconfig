@@ -50,7 +50,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    PS1='\e[1;32m\u\e[m\[\e[1;32m\]@\h\[\e[00m\]:\[\e[1;34m\]\w\[\e[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -118,8 +118,8 @@ elif [[ $(uname -o) == "Android" ]]; then
     export EDITOR="/data/data/com.termux/files/usr/bin/nvim"
     alias config='/data/data/com.termux/files/usr/bin/git --git-dir=/data/data/com.termux/files/home/.cfg --work-tree=/data/data/com.termux/files/home'
     # alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
-#     export PATH="/usr/local/miniconda3/bin:$PATH"
-#     export EDITOR="/usr/local/bin/nvim"
+    # export PATH="/usr/local/miniconda3/bin:$PATH"
+    # export EDITOR="/usr/local/bin/nvim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
 
