@@ -119,10 +119,10 @@ if [[ $(uname) == "Darwin" ]]; then
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
     alias bb='brew update && brew upgrade ; brew cleanup'
 elif [[ $(uname) == "Linux" ]]; then
-    alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
+    alias config='/usr/bin/git --git-dir=/home/matbas/.cfg/ --work-tree=/home/matbas'
     # export PATH="/usr/local/miniconda3/bin:$PATH"
-    export PAGER='/usr/local/bin/less'
-    export EDITOR="/usr/local/bin/nvim"
+    export PAGER='/usr/bin/less'
+    export EDITOR="/usr/bin/nvim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
 
