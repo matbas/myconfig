@@ -95,11 +95,8 @@ if has('unix')
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
     elseif g:os == 'Linux' 
-        if substitute(system('uname -o'), '\n', '', '') == 'Android'
-            let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python'
-            let g:gitgutter_sh='sh'
-            let g:gitgutter_sign_removed='–'
-        endif
+        let g:python_host_prog='/usr/local/bin/python2'
+        let g:python3_host_prog='/user/local/miniconda3/bin/python'
     endif
 endif
 
