@@ -114,17 +114,20 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
 fi
 
 if [[ $(uname) == "Darwin" ]]; then
-    alias config='/usr/local/bin/git --git-dir=/Users/matbas/.cfg/ --work-tree=/Users/matbas'
+    alias config="/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
     export PATH="/Users/matbas/miniconda3/bin:$PATH"
     export EDITOR="/usr/local/bin/nvim"
     export CLICOLOR=1
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
     alias bb='brew update && brew upgrade ; brew cleanup'
 elif [[ $(uname) == "Linux" ]]; then
-    alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
-    export PATH="$HOME/.local/bin:/usr/local/miniconda3/bin:$PATH"
-    export PAGER="/usr/local/bin/less"
-    export EDITOR="/usr/local/bin/nvim"
+    # Chromebrew
+    # alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
+    # export PATH="$HOME/.local/bin:/usr/local/miniconda3/bin:$PATH"
+    # export PAGER="/usr/local/bin/less"
+    # export EDITOR="/usr/local/bin/nvim"
+    alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+    export EDITOR="/usr/bin/vim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
 
@@ -135,9 +138,13 @@ fi
 #     source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 # fi
 
-#if [[ $TERM == xterm ]]; then
-#   TERM=xterm-256color;
-#fi
+if [ -e /lib/terminfo/x/xterm-256color ]; then
+    export TERM='xterm-256color'
+elif [ -e /usr/share/terminfo/x/xterm-256color ]; then
+    export TERM='xterm-256color'
+else
+    export TERM='xterm-color'
+fi
 
 
 #setxkbmap -layout gb
