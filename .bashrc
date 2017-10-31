@@ -87,7 +87,7 @@ alias la='ls -A'
 alias l='ls -CF'
 
 # tmux alias
-#alias tmux='tmux -2'
+alias tmux='tmux -2'
 if [ -f /usr/local/bin/nvim ]; then
     alias vim='nvim'
 fi
@@ -123,7 +123,7 @@ if [[ $(uname) == "Darwin" ]]; then
 elif [[ $(uname) == "Linux" ]]; then
     alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
     export PATH="$HOME/.local/bin:/usr/local/miniconda3/bin:$PATH"
-    export PAGER='/usr/local/bin/less'
+    export PAGER="/usr/local/bin/less"
     export EDITOR="/usr/local/bin/nvim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
