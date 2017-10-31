@@ -88,7 +88,9 @@ alias l='ls -CF'
 
 # tmux alias
 #alias tmux='tmux -2'
-alias vim='nvim'
+if [ -f /usr/local/bin/nvim ]; then
+    alias vim='nvim'
+fi
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -119,10 +121,10 @@ if [[ $(uname) == "Darwin" ]]; then
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
     alias bb='brew update && brew upgrade ; brew cleanup'
 elif [[ $(uname) == "Linux" ]]; then
-    alias config='/usr/bin/git --git-dir=/home/matbas/.cfg/ --work-tree=/home/matbas'
-    # export PATH="/usr/local/miniconda3/bin:$PATH"
-    export PAGER='/usr/bin/less'
-    export EDITOR="/usr/bin/nvim"
+    alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
+    export PATH="$HOME/.local/bin:/usr/local/miniconda3/bin:$PATH"
+    export PAGER='/usr/local/bin/less'
+    export EDITOR="/usr/local/bin/nvim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi
 

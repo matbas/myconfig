@@ -1,14 +1,16 @@
 call plug#begin('~/.config/nvim/plugged')
 
 Plug 'airblade/vim-gitgutter'
-Plug 'crusoexia/vim-monokai'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
+Plug 'haya14busa/incsearch.vim'
 Plug 'itchyny/lightline.vim'
+Plug 'jiangmiao/auto-pairs'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mgee/lightline-bufferline'
+Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'python-mode/python-mode'
-Plug 'jiangmiao/auto-pairs'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -18,7 +20,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentline'
-Plug 'ludovicchabant/vim-gutentags'
+Plug 'sjl/badwolf'
 
 call plug#end()
 
@@ -72,7 +74,7 @@ nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>d :bd<CR>
 inoremap jj <esc>
-tnoremap <Esc> <C-\><C-n>
+" tnoremap <Esc> <C-\><C-n>
 
 set encoding=utf-8
 set fileencoding=utf-8
@@ -94,18 +96,14 @@ if has('unix')
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
     elseif g:os == 'Linux' 
-        if substitute(system('uname -o'), '\n', '', '') == 'Android'
-            let g:python3_host_prog='/data/data/com.termux/files/usr/bin/python'
-            let g:gitgutter_sh='sh'
-            let g:gitgutter_sign_removed='–'
-        endif
+        let g:python_host_prog='/usr/local/bin/python2'
+        let g:python3_host_prog='/usr/local/miniconda3/bin/python'
     endif
 endif
 
 
 set background=dark
-let g:monokai_term_italic = 1
-colorscheme monokai
+colorscheme badwolf
 
 set hidden
 set showtabline=2
@@ -128,6 +126,8 @@ let g:pymode_rope_completion=0
 let g:pymode_rope_regenerate_on_write=0
 
 let g:ale_sign_column_always=1
+
+let g:gitgutter_max_signs = 1000
 
 let g:ctrlp_map = '<C-p>'
 let g:ctrlp_cmd = 'CtrlP'
