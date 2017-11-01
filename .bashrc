@@ -127,6 +127,7 @@ elif [[ $(uname) == "Linux" ]]; then
     # export PAGER="/usr/local/bin/less"
     # export EDITOR="/usr/local/bin/nvim"
     alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
+    export PATH="$HOME/.local/bin:$PATH"
     export EDITOR="/usr/bin/vim"
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
 fi

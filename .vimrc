@@ -4,10 +4,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'haya14busa/incsearch.vim'
-Plug 'itchyny/lightline.vim'
 Plug 'jiangmiao/auto-pairs'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'mgee/lightline-bufferline'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'python-mode/python-mode'
@@ -18,6 +16,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentline'
 Plug 'sjl/badwolf'
@@ -30,8 +30,10 @@ filetype plugin indent on
 syntax on
 syntax enable
 
-scriptencoding utf-8
+scriptencoding=utf-8
 set encoding=utf-8
+set fileencoding=utf-8
+set termencoding=utf-8
 
 set hlsearch
 set incsearch
@@ -57,7 +59,7 @@ set smartindent
 
 set linebreak
 set list
-set listchars=eol:¬,tab:··,trail:·,extends:>,precedes:<,space:·
+set listchars=eol:¬,tab:▸\ ,trail:·,extends:>,precedes:<
 set laststatus=2
 set nobackup
 set noswapfile
@@ -77,11 +79,6 @@ nnoremap <Leader>n :bn<CR>
 nnoremap <Leader>p :bp<CR>
 nnoremap <Leader>d :bd<CR>
 inoremap jj <esc>
-" tnoremap <Esc> <C-\><C-n>
-
-set encoding=utf-8
-set fileencoding=utf-8
-set termencoding=utf-8
 
 runtime macros/matchit.vim
 
@@ -99,8 +96,8 @@ if has('unix')
         let g:python_host_prog='/usr/local/bin/python2'
         let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
     elseif g:os == 'Linux' 
-        let g:python_host_prog='/usr/local/bin/python2'
-        let g:python3_host_prog='/usr/local/miniconda3/bin/python'
+        let g:python_host_prog='/usr/bin/python2'
+        let g:python3_host_prog='/usr/bin/python3'
     endif
 endif
 
@@ -111,10 +108,8 @@ colorscheme badwolf
 set hidden
 set showtabline=2
 
-let g:lightline = { 'colorscheme': 'powerline', }
-let g:lightline.tabline = {'left': [['buffers']], 'right':[['close']]}
-let g:lightline.component_expand = {'buffers': 'lightline#bufferline#buffers'}
-let g:lightline.component_type = {'buffers': 'tabsel'}
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
 
 let g:pymode_python='python3'
 let g:pymode_syntax=1
@@ -122,6 +117,7 @@ let g:pymode_syntax_slow_sync=0
 let g:pymode_syntax_all=1
 let g:pymode_indent=1
 let g:pymode_run=1
+
 let g:pymode_folding=0
 let g:pymode_lint=0
 let g:pymode_rope=0
@@ -138,3 +134,4 @@ let g:ctrlp_cmd = 'CtrlP'
 let g:gutentags_enabled=1
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.xhtml', '*.xml']
 let g:gutentags_cache_dir = '~/.config/nvim/gutentags'
+
