@@ -115,7 +115,7 @@ fi
 
 if [[ $(uname) == "Darwin" ]]; then
     alias config="/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
-    export PATH="/Users/matbas/miniconda3/bin:$PATH"
+    export PATH="$HOME/.local/bin:$PATH"
     export EDITOR="/usr/local/bin/vim"
     export CLICOLOR=1
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
