@@ -88,7 +88,7 @@ alias l='ls -CF'
 
 # tmux alias
 alias tmux='tmux -2'
-if [ -f /usr/local/bin/nvim ]; then
+if [ -e /usr/local/bin/nvim ]; then
     alias vim='nvim'
 fi
 
@@ -116,7 +116,7 @@ fi
 if [[ $(uname) == "Darwin" ]]; then
     alias config="/usr/local/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
     export PATH="/Users/matbas/miniconda3/bin:$PATH"
-    export EDITOR="/usr/local/bin/nvim"
+    export EDITOR="/usr/local/bin/vim"
     export CLICOLOR=1
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
     alias bb='brew update && brew upgrade ; brew cleanup'
@@ -125,7 +125,6 @@ elif [[ $(uname) == "Linux" ]]; then
     # alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'
     # export PATH="$HOME/.local/bin:/usr/local/miniconda3/bin:$PATH"
     # export PAGER="/usr/local/bin/less"
-    # export EDITOR="/usr/local/bin/nvim"
     alias config="/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME"
     export PATH="$HOME/.local/bin:$PATH"
     export EDITOR="/usr/bin/vim"
