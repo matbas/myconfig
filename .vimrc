@@ -9,6 +9,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mxw/vim-jsx'
 Plug 'pangloss/vim-javascript'
 Plug 'python-mode/python-mode'
+Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -20,7 +21,6 @@ Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'w0rp/ale'
 Plug 'yggdroot/indentline'
-Plug 'sjl/badwolf'
 
 call plug#end()
 
@@ -94,7 +94,7 @@ if has('unix')
     let g:os = substitute(system('uname'), '\n', '', '')
     if has('mac')
         let g:python_host_prog='/usr/local/bin/python2'
-        let g:python3_host_prog='/Users/matbas/miniconda3/bin/python'
+        let g:python3_host_prog='/usr/local/bin/python3'
     elseif g:os == 'Linux' 
         let g:python_host_prog='/usr/bin/python2'
         let g:python3_host_prog='/usr/bin/python3'
