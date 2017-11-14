@@ -12,6 +12,7 @@ Plug 'python-mode/python-mode'
 Plug 'sjl/badwolf'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-ragtag'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
@@ -101,7 +102,6 @@ if has('unix')
     endif
 endif
 
-
 set background=dark
 colorscheme badwolf
 
@@ -117,7 +117,6 @@ let g:pymode_syntax_slow_sync=0
 let g:pymode_syntax_all=1
 let g:pymode_indent=1
 let g:pymode_run=1
-
 let g:pymode_folding=0
 let g:pymode_lint=0
 let g:pymode_rope=0
@@ -133,5 +132,5 @@ let g:ctrlp_cmd = 'CtrlP'
 
 let g:gutentags_enabled=1
 let g:gutentags_ctags_exclude = ['*.css', '*.html', '*.xhtml', '*.xml']
-let g:gutentags_cache_dir = '~/.config/nvim/gutentags'
+let g:gutentags_cache_dir = '~/.config/gutentags'
 
