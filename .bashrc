@@ -137,10 +137,7 @@ fi
 #     __GIT_PROMPT_DIR="/usr/local/opt/bash-git-prompt/share"
 #     source "/usr/local/opt/bash-git-prompt/share/gitprompt.sh"
 # fi
-
-if [ -e /lib/terminfo/x/xterm-256color ]; then
-    export TERM='xterm-256color'
-elif [ -e /usr/share/terminfo/x/xterm-256color ]; then
+if [[ $(uname) == "Darwin" ]] || [ -e /lib/terminfo/x/xterm-256color ] || [ -e /usr/share/terminfo/x/xterm-256color ]; then
     export TERM='xterm-256color'
 else
     export TERM='xterm-color'
