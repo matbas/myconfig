@@ -120,6 +120,9 @@ if [[ $(uname) == "Darwin" ]]; then
     export CLICOLOR=1
     export LS_COLORS=$LS_COLORS:'tw=1;93:ow=1;93'
     alias bb='brew update && brew upgrade ; brew cleanup'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
 elif [[ $(uname) == "Linux" ]]; then
     # Chromebrew
     # alias config='/usr/local/bin/git --git-dir=/home/chronos/user/.cfg/ --work-tree=/home/chronos/user'

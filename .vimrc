@@ -1,6 +1,7 @@
 call plug#begin('~/.vim/plugged')
 
 Plug 'airblade/vim-gitgutter'
+Plug 'alvan/vim-closetag'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'ervandew/supertab'
 Plug 'haya14busa/incsearch.vim'
@@ -111,17 +112,19 @@ set showtabline=2
 let g:airline_theme='badwolf'
 let g:airline#extensions#tabline#enabled = 1
 
+let g:closetag_filenames='*.html,*.xhtml,*.xml'
+
 let g:pymode_python='python3'
 let g:pymode_syntax=1
-let g:pymode_syntax_slow_sync=0
+" let g:pymode_syntax_slow_sync=0
 let g:pymode_syntax_all=1
-let g:pymode_indent=1
-let g:pymode_run=1
 let g:pymode_folding=0
-let g:pymode_lint=0
-let g:pymode_rope=0
-let g:pymode_rope_completion=0
-let g:pymode_rope_regenerate_on_write=0
+let g:pymode_indent=1
+" let g:pymode_run=1
+" let g:pymode_lint=0
+" let g:pymode_rope=0
+" let g:pymode_rope_completion=0
+" let g:pymode_rope_regenerate_on_write=0
 
 let g:ale_sign_column_always=1
 
